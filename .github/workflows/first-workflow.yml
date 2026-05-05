@@ -17,4 +17,4 @@ jobs:
           run: ls
 
         - name: RF
-          run: README.md
+          run: cat README.md
