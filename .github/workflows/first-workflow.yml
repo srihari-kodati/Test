@@ -1,0 +1,17 @@
+name: F W
+on:
+    push
+
+jobs:
+    read-file:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: W M
+          run: echo "GA W F"
+    
+        - name: LF
+          run: ls
+
+        - name: RF
+          run: README.md
