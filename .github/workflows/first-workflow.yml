@@ -8,8 +8,8 @@ jobs:
 
         steps:
         - name: C R
-          uses: actions/checkour@v6
-          
+          uses: actions/checkout@v6
+
         - name: W M
           run: echo "GA W F"
     
