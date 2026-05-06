@@ -13,8 +13,8 @@ jobs:
           run: ls -ltra
         - name: Executing Shell Script
           run: |
-            chmod +x script.sh
+            chmod +x ascii-script.sh
             ./script.sh
             
         - name: Read File
-          run: cat script.sh    
+          run: cat ascii-script.sh    
