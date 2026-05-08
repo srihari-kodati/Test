@@ -1,0 +1,23 @@
+name: Matrix Config
+
+on:
+    workflow_dispatch
+
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Docker Details
+          run: docker info
+
+        - name: Run Images
+          run: docker run hello-world
+
+    second_job:
+        runs-on: windows-latest
+        steps:
+        - name: Docker Details
+          run: docker info
+
+        - name: Run Images
+          run: docker run hello-world
