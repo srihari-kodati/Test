@@ -4,10 +4,10 @@
 sudo apt-get update
 
 # Install cowsay
-sudo apt-get install -y cowsay
+sudo apt-get install cowsay -y 
 
 # Create dragon ASCII output
-/usr/games/cowsay -f dragon "DRAGON...Roar!!!" >> dragon.txt
+cowsay -f dragon "DRAGON...Roar!!!" >> dragon.txt
 
 # Search for dragon text
 grep -i "dragon" dragon.txt
