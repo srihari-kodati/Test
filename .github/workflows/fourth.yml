@@ -1,0 +1,31 @@
+name: Multiple Jobs
+
+on: 
+  push
+
+jobs: 
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        # - name: Checkout Repo
+        #   uses: actions/checkout@v6
+
+        - name: Install Cowsay Program
+          run: sudo apt-get install cowsay -y
+
+        - name: Execute Cowsay CMD
+          run: cowsay -f dragon "Run for cover, I'm a DRAGON ... RAWR" >> dragon.txt
+    test:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Test File Exists
+          run: grep -i "dragon" dragon.txt
+
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Read File
+          run: cat dragon.txt
+
+        - name: List Repo Files
+          run: ls -ltra
