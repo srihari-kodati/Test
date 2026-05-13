@@ -11,7 +11,8 @@ jobs:
         - name: Checkout only README.md
           uses: actions/checkout@v6
           with:
-            sparse-checkout: README.md
+            sparse-checkout: |
+              README.md
             sparse-checkout-cone-mode: true
 
         - name: List Files
