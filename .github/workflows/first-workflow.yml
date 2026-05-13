@@ -7,19 +7,18 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-        - name: C R
-          uses: actions/checkout@v6
 
+        - name: Checkout only README.md
+          uses: actions/checkout@v6
           with:
-            sparse-checkout: |
-              README.md
+            sparse-checkout: README.md
             sparse-checkout-cone-mode: true
-            
+
+        - name: List Files
+          run: ls -ltra
+
         - name: W M
           run: echo "GA W F"
-    
-        - name: LF
-          run: ls
 
         - name: RF
           run: cat README.md
