@@ -10,6 +10,11 @@ jobs:
         - name: C R
           uses: actions/checkout@v6
 
+          with:
+            sparse-checkout: |
+              README.md
+            sparse-checkout-cone-mode: true
+            
         - name: W M
           run: echo "GA W F"
     
