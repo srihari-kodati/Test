@@ -4,6 +4,8 @@ on:
     #   branches: 
     #     - main
 
+# We put comment on the main branch
+
     pull_request:
       branches: 
         - main
