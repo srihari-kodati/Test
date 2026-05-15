@@ -1,6 +1,12 @@
 name: F W
 on:
-    push
+    # push:
+    #   branches: 
+    #     - main
+
+    pull_request:
+      branches: 
+        - main
 
 jobs:
     read-file:
