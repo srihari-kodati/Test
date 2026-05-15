@@ -1,26 +1,44 @@
-name: Generate ASCII Artwork
+name: ENV
 
 on: 
   push
 
+env:
+  COUNTRY: India
+
 jobs: 
-    ascii_job:
+    first_job:
         runs-on: ubuntu-latest
         steps:
         # - name: Checkout Repo
         #   uses: actions/checkout@v6
 
-        - name: Install Cowsay Program
-          run: sudo apt-get install cowsay -y
+        - name: Step1
+          env:
+            EMP_NAME: Srihari
+            EMP_ID: 1393
 
-        - name: Execute Cowsay CMD
-          run: cowsay -f dragon "Run for cover, I'm a DRAGON ... RAWR" >> dragon.txt
+          run: |
+            echo "My Name is $EMP_NAME"
+            echo "My Employee ID is $EMP_ID"
 
-        - name: Test File Exists
-          run: grep -i "dragon" dragon.txt
+        - name: Step2
+          # env:
+          #   EMP_NAME: Srihari
+          #   EMP_ID: 1393
 
-        - name: Read File
-          run: cat dragon.txt
+          run: |
+            echo "My Name is $EMP_NAME"
+            echo "My Employee ID is $EMP_ID"
 
-        - name: List Repo Files
-          run: ls -ltra
+    second_job:
+      runs-on: ubuntu-latest
+      env:
+        COMPANY: Nuware
+        LOCATION: Bengaluru
+      steps:
+      - name: Job level
+        run: echo "My Company is $COMPANY and the Location is $LOCATION"
+
+      - name: Workflow level
+        run: echo "My country is $COUNTRY"
