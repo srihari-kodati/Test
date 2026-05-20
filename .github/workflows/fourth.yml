@@ -1,14 +1,19 @@
 name: Multiple Jobs
 
-on: 
-  push
+on:
+    # push:
+    #   branches: 
+    #     - main
+
+    pull_request:
+      branches: 
+        - main
+
 
 jobs: 
     build:
         runs-on: ubuntu-latest
         steps:
-        # - name: Checkout Repo
-        #   uses: actions/checkout@v6
 
         - name: Install Cowsay Program
           run: sudo apt-get install cowsay -y
